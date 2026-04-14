@@ -335,7 +335,7 @@ def create_overlay():
 
     make_toggle("NPC Chat", "npc_chat")
     make_toggle("Party DC", "pt_dc")
-    make_toggle("Joined Party", "joined_party")
+    make_toggle("Auto-start PQ", "joined_party")
     make_toggle("Invited PQ", "invited_pq")
     make_toggle("Crash Recovery", "crash")
     make_toggle("Auto Login", "login")
