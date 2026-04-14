@@ -1,10 +1,4 @@
-<<<<<<< HEAD
 opencv-python
 numpy
 adbutils
-=======
-opencv-python
-numpy
-adbutils
->>>>>>> 17cf502363b9fb16fb06a87a3a5bebf1e2940c24
 mss
