@@ -256,6 +256,29 @@ def run_bot(device):
                 adb_tap(device, *pos, 4)
                 time.sleep(30)
                 continue
+                # skip offline reward screen
+            pos = find_image(gray, "offlineReward.png")
+            if pos:
+                pos2 = find_image(gray, "offlineRewardOk.png")
+                b, g, r = img[pos2[1], pos2[0]]
+                if b >r and b > g:  # Check if the button is blue
+                    print(f"[{device}] OfflineReward", pos2)
+                    adb_tap(device, *pos2, jitter_amount=7)
+                    human_delay()
+                    continue
+                continue
+
+            # skip notice screen
+            pos = find_image(gray, "startPopup.png")
+            if pos:
+                pos2 = find_image(gray, "startPopupClose.png")
+                if pos2: 
+                    print(f"[{device}] Notice close", pos2)
+                    adb_tap(device, *pos2, jitter_amount=7)
+                    human_delay()
+                    continue
+                continue
+
             
 
         time.sleep(0.3)
